@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:ListViewMaui"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
              x:Class="ListViewMaui.MainPage">
+
     <ContentPage.BindingContext>
         <local:ListViewGridLayoutViewModel x:Name="viewModel"/>
     </ContentPage.BindingContext>
@@ -19,15 +20,15 @@
         </Grid.RowDefinitions>
         <Grid   HeightRequest="45">
             <Label LineBreakMode="NoWrap" Grid.Row="0"
-             Margin="10,0,0,0" Text="Gallery" FontAttributes="Bold"
-             FontSize="16" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center"/>
+          Margin="10,0,0,0" Text="Gallery" FontAttributes="Bold"
+          FontSize="16" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center"/>
         </Grid>
         <syncfusion:SfListView x:Name="listView" 
-                     SelectionMode="Multiple"
-                     ItemsSource="{Binding GalleryInfo}"
-                     Grid.Row="1"
-                     ItemSize="{OnIdiom Phone='150',Tablet='150',Desktop='170'}"
-                     ItemSpacing="3">
+                  SelectionMode="Multiple"
+                  ItemsSource="{Binding GalleryInfo}"
+                  Grid.Row="1"
+                  ItemSize="{OnIdiom Phone='150',Tablet='150',Desktop='170'}"
+                  ItemSpacing="3">
             <syncfusion:SfListView.ItemsLayout>
                 <syncfusion:GridLayout SpanCount="2"/>
             </syncfusion:SfListView.ItemsLayout>
@@ -36,14 +37,14 @@
                 <DataTemplate>
                     <Grid RowSpacing="0" ColumnSpacing="0">
                         <Image Source="{Binding Image}"
-                   Aspect="AspectFill"
-                          MinimumHeightRequest="40" MinimumWidthRequest="40" />
+                Aspect="AspectFill"
+                       MinimumHeightRequest="40" MinimumWidthRequest="40" />
                         <Grid VerticalOptions="End" ColumnSpacing="0" Opacity="0.75" BackgroundColor="#CDCDCD" HeightRequest="{OnIdiom Phone='30' , Tablet='40',Desktop='40'}">
 
                             <Label Text="{Binding ImageTitle}" TextColor="Black"
-                     VerticalTextAlignment="Center"
-                     Margin="20,0,0,0"
-                     HorizontalTextAlignment="Start" FontSize="{OnPlatform WinUI=14,Android=12, Default=10 }">
+                  VerticalTextAlignment="Center"
+                  Margin="20,0,0,0"
+                  HorizontalTextAlignment="Start" FontSize="{OnPlatform WinUI=14,Android=12, Default=10 }">
 
                             </Label>
                         </Grid>
@@ -52,4 +53,5 @@
             </syncfusion:SfListView.ItemTemplate>
         </syncfusion:SfListView>
     </Grid>
+
 </ContentPage>
